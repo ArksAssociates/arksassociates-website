@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arks Associates</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Arks Associates | Environmental Engineering</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,190 +20,305 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7f6;
+background:#f4f8f5;
 color:#222;
+overflow-x:hidden;
 }
 
 header{
-background:linear-gradient(135deg,#0f5132,#198754);
-padding:20px 8%;
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:sticky;
-top:0;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(12px);
 z-index:1000;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 .logo{
-font-size:28px;
-font-weight:700;
+font-size:30px;
+font-weight:800;
 color:white;
+letter-spacing:1px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
+margin-left:28px;
 font-weight:500;
+transition:0.3s;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#32d27d;
 transition:0.3s;
 }
 
-nav a:hover{
-color:#d1ffdd;
+nav a:hover::after{
+width:100%;
 }
 
 .hero{
-height:90vh;
+height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1400');
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1400');
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 padding:0 8%;
-color:white;
+position:relative;
 }
 
 .hero-content{
-max-width:700px;
+max-width:750px;
+color:white;
 animation:fadeUp 1s ease;
 }
 
-.hero h1{
-font-size:60px;
-line-height:1.2;
-margin-bottom:20px;
+.hero-content h1{
+font-size:68px;
+line-height:1.1;
+margin-bottom:25px;
+font-weight:800;
 }
 
-.hero p{
-font-size:18px;
-margin-bottom:30px;
+.hero-content p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:35px;
+color:#e4e4e4;
 }
 
 .btn{
 display:inline-block;
-padding:14px 30px;
-background:#198754;
+padding:16px 34px;
+background:#1db954;
 color:white;
+border-radius:50px;
 text-decoration:none;
-border-radius:40px;
-transition:0.3s;
 font-weight:600;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .btn:hover{
-transform:translateY(-5px);
-background:#146c43;
+transform:translateY(-6px);
 }
 
 section{
-padding:80px 8%;
+padding:110px 8%;
 }
 
 .section-title{
+font-size:46px;
 text-align:center;
-font-size:40px;
-margin-bottom:50px;
+margin-bottom:70px;
 color:#0f5132;
+font-weight:700;
 }
 
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
+gap:70px;
 align-items:center;
 }
 
 .about img{
 width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .about-text p{
-margin-bottom:20px;
-line-height:1.8;
+margin-bottom:22px;
+line-height:1.9;
+font-size:17px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:20px;
-transition:0.4s;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+padding:40px 30px;
+border-radius:25px;
+transition:0.5s;
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:#1db954;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-12px);
 }
 
 .card h3{
-margin-bottom:15px;
-color:#198754;
+margin-bottom:18px;
+font-size:24px;
+color:#0f5132;
+}
+
+.card p{
+line-height:1.8;
+color:#555;
+}
+
+.stats{
+background:#0f5132;
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.stat-box h2{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.stat-box p{
+font-size:18px;
 }
 
 .clients{
-background:#e9f5ee;
+background:#eef7f1;
 }
 
 .client-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
 }
 
 .client-box{
 background:white;
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:18px;
 text-align:center;
-font-weight:500;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+font-weight:600;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.client-box:hover{
+transform:scale(1.05);
 }
 
 .contact{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
+gap:60px;
+}
+
+.contact-info{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 .contact-info p{
-margin-bottom:20px;
-font-size:18px;
+margin-bottom:25px;
+line-height:1.8;
+font-size:17px;
 }
 
 form{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
 display:flex;
 flex-direction:column;
 }
 
 input,textarea{
-padding:15px;
+padding:16px;
 margin-bottom:20px;
 border:none;
-border-radius:10px;
-background:#f1f1f1;
+background:#f1f4f3;
+border-radius:12px;
+font-size:15px;
 }
 
 textarea{
-height:150px;
+height:160px;
 resize:none;
 }
 
+button{
+border:none;
+cursor:pointer;
+}
+
 footer{
-background:#0f5132;
+background:#081c15;
 color:white;
 text-align:center;
-padding:25px;
+padding:35px;
+font-size:15px;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+z-index:999;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
 }
 
 @keyframes fadeUp{
@@ -217,8 +334,8 @@ transform:translateY(0);
 
 @media(max-width:900px){
 
-.hero h1{
-font-size:40px;
+.hero-content h1{
+font-size:42px;
 }
 
 .about,
@@ -230,6 +347,10 @@ nav{
 display:none;
 }
 
+section{
+padding:90px 6%;
+}
+
 }
 
 </style>
@@ -239,7 +360,7 @@ display:none;
 
 <header>
 
-<div class="logo">Arks Associates</div>
+<div class="logo">ARKS ASSOCIATES</div>
 
 <nav>
 <a href="#home">Home</a>
@@ -255,13 +376,13 @@ display:none;
 
 <div class="hero-content">
 
-<h1>Environmental Engineering & Consultancy Services</h1>
+<h1>Environmental Engineering & Sustainability Solutions</h1>
 
 <p>
-Arks Associates provides sustainable environmental solutions including STP, ETP, ZLD, MPCB Clearance, CGWA NOC, RO Systems and Environmental Consultancy Services.
+Professional consultancy and engineering services for STP, ETP, ZLD, MPCB Clearance, CGWA NOC, RO Systems and industrial environmental solutions.
 </p>
 
-<a href="#contact" class="btn">Contact Us</a>
+<a href="#contact" class="btn">Get Consultation</a>
 
 </div>
 
@@ -273,20 +394,24 @@ Arks Associates provides sustainable environmental solutions including STP, ETP,
 
 <div class="about">
 
-<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1200">
 
 <div class="about-text">
 
 <p>
-Arks Associates is a group of Engineers & Technocrats working towards sustainable environmental solutions.
+Arks Associates is a team of Engineers & Technocrats delivering advanced environmental and industrial consultancy services across India.
 </p>
 
 <p>
-We believe in eco-friendly technologies that help conserve water, energy and reduce pollution.
+We believe in sustainable development using eco-friendly technologies that conserve resources and reduce environmental impact.
 </p>
 
 <p>
-We provide consultancy, installation and maintenance services for industrial and environmental projects across India.
+Our expertise includes environmental clearance, water treatment systems, pollution control equipment, liaisoning consultancy and industrial support services.
+</p>
+
+<p>
+We proudly serve industries, hotels, hospitals, infrastructure projects and manufacturing units nationwide.
 </p>
 
 </div>
@@ -303,32 +428,60 @@ We provide consultancy, installation and maintenance services for industrial and
 
 <div class="card">
 <h3>STP Systems</h3>
-<p>Sewage Treatment Plant design, installation and maintenance.</p>
+<p>Sewage Treatment Plant design, consultancy, installation and maintenance services.</p>
 </div>
 
 <div class="card">
 <h3>ETP Systems</h3>
-<p>Effluent Treatment Plant solutions for industries.</p>
+<p>Effluent Treatment Plant solutions for industrial wastewater management.</p>
 </div>
 
 <div class="card">
-<h3>ZLD Systems</h3>
-<p>Zero Liquid Discharge solutions for water recovery.</p>
+<h3>ZLD Solutions</h3>
+<p>Zero Liquid Discharge systems for maximum water recovery and reuse.</p>
 </div>
 
 <div class="card">
 <h3>RO Systems</h3>
-<p>Industrial Reverse Osmosis water purification systems.</p>
+<p>Industrial RO water purification systems and filtration solutions.</p>
 </div>
 
 <div class="card">
-<h3>MPCB Clearance</h3>
-<p>Environmental clearance and pollution control consultancy.</p>
+<h3>MPCB Consultancy</h3>
+<p>MPCB Consent, Environmental Clearance and pollution compliance support.</p>
 </div>
 
 <div class="card">
 <h3>CGWA NOC</h3>
-<p>Groundwater NOC and compliance consultancy services.</p>
+<p>Groundwater NOC consultancy and complete documentation assistance.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h2>75+</h2>
+<p>Clients Served</p>
+</div>
+
+<div class="stat-box">
+<h2>10+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-box">
+<h2>100+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Support</p>
 </div>
 
 </div>
@@ -337,7 +490,7 @@ We provide consultancy, installation and maintenance services for industrial and
 
 <section class="clients" id="clients">
 
-<h2 class="section-title">Our Clients</h2>
+<h2 class="section-title">Trusted Clients</h2>
 
 <div class="client-grid">
 
@@ -345,10 +498,10 @@ We provide consultancy, installation and maintenance services for industrial and
 <div class="client-box">GTN Industries Ltd</div>
 <div class="client-box">Nyati Group</div>
 <div class="client-box">Hindalco Industries</div>
-<div class="client-box">Forbes Marshall</div>
-<div class="client-box">Craftsman Automation</div>
 <div class="client-box">Suzlon Energy</div>
 <div class="client-box">HYVA India Pvt Ltd</div>
+<div class="client-box">Forbes Marshall</div>
+<div class="client-box">Craftsman Automation</div>
 
 </div>
 
@@ -362,17 +515,21 @@ We provide consultancy, installation and maintenance services for industrial and
 
 <div class="contact-info">
 
-<p><strong>Address:</strong><br>
+<p>
+<strong>Address:</strong><br>
 Shop No. 82, First Floor, Rahul Complex II,<br>
-Near S.T. Bus Stand, Ganeshpeth, Nagpur - 440018
+Near S.T. Bus Stand, Ganeshpeth,<br>
+Nagpur - 440018
 </p>
 
-<p><strong>Phone:</strong><br>
+<p>
+<strong>Phone:</strong><br>
 +91 8956527367<br>
 +91 9975991129
 </p>
 
-<p><strong>Email:</strong><br>
+<p>
+<strong>Email:</strong><br>
 arksassociates01@gmail.com
 </p>
 
@@ -396,9 +553,13 @@ arksassociates01@gmail.com
 
 <footer>
 
-© 2026 Arks Associates. All Rights Reserved.
+© 2026 Arks Associates | Environmental Engineering & Consultancy Services
 
 </footer>
+
+<a class="whatsapp" href="https://wa.me/918956527367" target="_blank">
+☎
+</a>
 
 </body>
 </html>
